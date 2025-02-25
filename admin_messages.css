@@ -1,0 +1,74 @@
+
+/* стилизация блока новых сообщений */
+.message-form {
+    max-width: 800px;
+    margin: 100px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.message-form textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+.message-form input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+/*  кнопка отправки
+Основной цвет фона из переменной --primary
+Белый цвет текста
+Без границ
+Внутренние отступы 10px сверху/снизу и 20px слева/справа
+Скругленные углы 4px
+Курсор в виде указателя при наведении
+При наведении (.submit-btn:hover) цвет фона меняется на более темный вариант
+*/
+.submit-btn {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: var(--primary-darken-1);
+}
+
+/* кнопка подтверждения
+Схожие базовые стили с submit-btn
+Дополнительный отступ сверху 10px
+Плавная анимация всех изменений за 0.3 секунды
+Особое состояние .acknowledged:
+Голубой цвет фона (#87CEEB)
+Отключение взаимодействия с кнопкой
+Обычный курсор вместо указателя */
+/* .acknowledge-btn {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+.acknowledge-btn.acknowledged {
+    background-color: #87CEEB;
+    cursor: default;
+    pointer-events: none;
+} */

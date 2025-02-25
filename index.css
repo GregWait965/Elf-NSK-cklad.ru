@@ -1,0 +1,30 @@
+/* Основные стили */
+.published-tasks {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+/* Стили блоков задач */
+.task-block {
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+.task-item {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.task-item:last-child {
+    border-bottom: none;
+}
+
+/* Заголовок страницы */
+h1 {
+    text-align: center;
+    color: #333;
+}

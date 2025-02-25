@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html xml:lang="ru" class="bx-core bx-win bx-no-touch bx-no-retina bx-chrome" lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
+    <title>ПОКАЗАТЕЛИ</title>
+        
+    
+    <link rel="stylesheet" href="info_employee_profile.css" type="text/css">
+    <link rel="stylesheet" href="bell.css" type="text/css">
+    <link rel="stylesheet" href="info_metrics.css" type="text/css">
+    <link rel="stylesheet" href="navi.css" type="text/css" >
+    <link rel="stylesheet" href="bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="theme.min.css" type="text/css">
+    <link rel="icon" href="logo.ico" type="image/x-icon" >
+
+</head>
+<body>
+<!-- создание шапки (header) страницы-->
+<header>
+  <div id="b596" class="block-wrapper block-04-4-one-col-big-with-img">
+    <section class="landing-block js-animation landing-block-node-mainimg u-bg-overlay g-pt-30 g-pb-30 slideInDown animated" style="background-color: var(--primary);">
+        <div class="u-bg-overlay__inner">
+            <div class="landing-block-node-inner container g-max-width-container text-uppercase text-center">
+                <h4 class="landing-block-node-title js-animation fadeIn animated g-line-height-1_1 g-font-weight-700 h1 g-color-white">показатели</h2>
+            </div>
+        </div>
+    </section>
+</div>
+</header>
+
+<main>
+<!--дбавление иконки колокольчика -->
+<div class="notification-bell">
+    <svg viewBox="0 0 24 24" width="24" height="24" fill="white">
+        <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z"/>
+    </svg>
+</div>
+
+    <div id="profile">
+        <img id="profile-pic" src="" alt="фото">
+        <div>
+        <h2 id="employee-name"></h2>
+        <button class="nav-btn" onclick="uploadPhoto()">Загрузить фото</button>
+    </div>
+    <!-- Add new date block here -->
+
+</div>
+    <!-- Новый блок для отображения информации -->
+    <div class="info-block">
+        <p> <div id="warehouse-info" class="info-block"></div></p>
+        <h4>Рабочее время</h4>
+        <div class="info-block" >на сегодня
+        <h2 id="current-date"></h2>
+        </div>
+        <div id="work-info" class="info-block"></div> 
+        <h4>Показатели сотрудника</h4>
+        <div id="assembly-participation" class="info-block"></div>
+        <div id="loading-participation" class="info-block"></div>
+        <div id="average-load" class="info-block"></div>
+        <h4>Допущено ошибок</h4>
+        <div id="error-info" class="info-block"></div></div>
+    </div>
+</div>
+<br>
+<br>
+
+<!-- Добавляем навигационные кнопки -->
+<div class="nav-buttons container">
+		<a href="index.html" class="nav-btn">
+			<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z" stroke="white" stroke-width="2"/>
+			</svg>
+			<span>ПЛАНЕРКА</span>
+		</a>
+		
+		<a href="messages.html" class="nav-btn">
+			<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10z" stroke="white" stroke-width="2"/>
+			</svg>
+			<span>СООБЩЕНИЯ</span>
+		</a>
+		
+		<a href="info.html" class="nav-btn">
+			<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<circle cx="12" cy="12" r="10" stroke="white" stroke-width="2"/>
+				<path d="M12 8v8M12 7v.01" stroke="white" stroke-width="2"/>
+			</svg>
+			<span>ПОКАЗАТЕЛИ РАБОТЫ</span>
+		</a>
+		
+		<a href="knowledge_base.html" class="nav-btn">
+			<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="white" stroke-width="2"/>
+			</svg>
+			<span>БАЗА ЗНАНИЙ</span>
+		</a>
+</div>
+	</main>
+
+<hr>
+<footer class="bitrix-footer" style="background-color: #4b4848; text-align: center; padding: 5px;">
+    <span class="bitrix-footer-text">
+        <div class="bitrix-footer-seo">© 2025 ООО "ГК Эльф" ОП г. Новосибирск</div>
+    </span>
+</footer>
+<!-- скрипт Для хранения и синхронизации сообщений между страницами -->
+    <script src="info_metrics.js"></script>
+<!-- Обработка загрузки колокольчика -->
+    <script src="bell.js"></script>
+<!-- Обработка загрузки и валидации фото -->
+    
+
+<!-- Отображение никнейма Ползователя -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    
+    if (!currentUser) {
+        window.location.href = 'entrance.html';
+        return;
+    }
+
+    // Display employee name
+    const employeeNameElement = document.getElementById('employee-name');
+    employeeNameElement.innerText = currentUser.fullName || 'Имя не указано';
+    
+    // Display profile picture if exists
+    const profilePic = document.getElementById('profile-pic');
+    profilePic.src = localStorage.getItem('profilePic') || '';
+
+    // Update other employee information
+    renderWarehouseInfo(currentUser);
+    renderHistograms(currentUser);
+    renderAverageLoad(currentUser);
+    renderErrorInfo(currentUser);
+    renderWorkInfo(currentUser);
+});
+</script> 
+<!-- Отображение фото Ползователя -->
+<script>
+    function uploadPhoto() {
+        const input = document.createElement('input');
+        input.type = 'file';
+        input.accept = 'image/*';
+        input.onchange = e => {
+            const file = e.target.files[0];
+            if (file && (file.size <= 2000000) && (file.type.startsWith('image/'))) {
+                const reader = new FileReader();
+                reader.onload = () => {
+                    localStorage.setItem('profilePic', reader.result);
+                    document.getElementById('profile-pic').src = reader.result;
+                };
+                reader.readAsDataURL(file);
+            } else {
+                alert('Неверный формат или размер изображения.');
+            }
+        };
+        input.click();
+    }
+</script>
+<!-- --------время и дата-------- -->
+<script>
+
+function updateDate() {
+    const dateElement = document.getElementById('current-date');
+    const options = { 
+        day: 'numeric', 
+        month: 'long', 
+        year: 'numeric' 
+    };
+    const currentDate = new Date().toLocaleDateString('ru-RU', options);
+    dateElement.textContent = currentDate;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    updateDate();
+});
+</script>
+<!-- отработано часов, смен -->
+<script>
+    function renderWorkInfo(currentUser) {
+    const workInfo = document.getElementById('work-info');
+    workInfo.innerHTML = `
+        <h6>Отработано часов: ${currentUser.hoursWorked}</h6>
+        <h6>Отработано смен: ${currentUser.shiftsWorked}</h6>
+    `;
+}
+document.addEventListener('DOMContentLoaded', () => {
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    if (!currentUser) {
+        window.location.href = 'entrance.html';
+        return;
+    }
+    // ... other code ...
+    renderWorkInfo(currentUser);
+});
+</script>
+<!--------- принадлежность к складу и колличество коллег -->
+<script>
+function renderWarehouseInfo(currentUser) {
+    const warehouseInfo = document.getElementById('warehouse-info');
+    
+    // Get warehouse name from the first column
+    const warehouseName = currentUser.namb;
+    
+    // Get all employees data
+    const employeeDataStorage = JSON.parse(localStorage.getItem('employeeDataStorage'));
+    const employeeData = employeeDataStorage ? employeeDataStorage.employeeData : [];
+    
+    // Count employees in the same warehouse
+    const employeesInWarehouse = employeeData.filter(emp => 
+        emp.namb === warehouseName
+    ).length;
+
+    warehouseInfo.innerHTML = `
+        <p><h7>Склад: ${warehouseName}</h7></p>
+        <p><h7>Количество сотрудников: ${employeesInWarehouse}</h7></p>
+    `;
+}
+</script>
+<!--------- информация о допущенных ошибок и их процентное соотношение -->
+<script>
+function renderErrorInfo(currentUser) {
+    const errorInfo = document.getElementById('error-info');
+    errorInfo.innerHTML = `
+        <h6>Подтвержденных претензий: ${currentUser.errorsMade}</h6>
+        <h6>% допущенных ошибок: ${currentUser.errorRate}</h6>
+    `;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    if (!currentUser) {
+        window.location.href = 'entrance.html';
+        return;
+    }
+    
+    renderErrorInfo(currentUser);
+});
+</script>
+<!--------- гистограммы участия в сборке и погрузке, среднесменной загруженности, допущенных ошибок и их процентное соотношение -->
+<script>
+function renderHistograms(currentUser) {
+    const assemblyParticipation = document.getElementById('assembly-participation');
+    const loadingParticipation = document.getElementById('loading-participation');
+    
+    // Get all employees from the same warehouse
+    const employeeDataStorage = JSON.parse(localStorage.getItem('employeeDataStorage'));
+    const warehouseEmployees = employeeDataStorage.employeeData.filter(emp => 
+        emp.namb === currentUser.namb
+    );
+
+    // Assembly participation histograms for all warehouse employees
+    let assemblyHtml = `<h6>% участия в сборке:</h6>`;
+    warehouseEmployees.forEach(emp => {
+        assemblyHtml += `
+            <div class="employee-histogram">
+                <span class="employee-name">${emp.fullName}</span>
+                <div class="histogram-bar" style="width: ${emp.assemblyParticipation}%">
+                    ${emp.assemblyParticipation}%
+                </div>
+            </div>`;
+    });
+    assemblyParticipation.innerHTML = assemblyHtml;
+
+    // Loading participation histograms for all warehouse employees
+    let loadingHtml = `<h6>% участия в погрузке:</h6>`;
+    warehouseEmployees.forEach(emp => {
+        loadingHtml += `
+            <div class="employee-histogram">
+                <span class="employee-name">${emp.fullName}</span>
+                <div class="histogram-bar" style="width: ${emp.loadingParticipation}%">
+                    ${emp.loadingParticipation}%
+                </div>
+            </div>`;
+    });
+    loadingParticipation.innerHTML = loadingHtml;
+}
+
+function renderAverageLoad(currentUser) {
+    const averageLoad = document.getElementById('average-load');
+    
+    // Get all employees from the same warehouse
+    const employeeDataStorage = JSON.parse(localStorage.getItem('employeeDataStorage'));
+    const warehouseEmployees = employeeDataStorage.employeeData.filter(emp => 
+        emp.namb === currentUser.namb
+    );
+
+    // Average load histograms for all warehouse employees
+    let loadHtml = `<h6>% Среднесменной загруженности:</h6>`;
+    warehouseEmployees.forEach(emp => {
+        loadHtml += `
+            <div class="employee-histogram">
+                <span class="employee-name">${emp.fullName}</span>
+                <div class="histogram-bar" style="width: ${emp.averageShiftLoad}%">
+                    ${emp.averageShiftLoad}%
+                </div>
+            </div>`;
+    });
+    averageLoad.innerHTML = loadHtml;
+}
+
+// Add CSS styles
+const styles = `
+    <style>
+        .employee-histogram {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+        .employee-name {
+            width: 150px;
+            font-size: 14px;
+            margin-right: 10px;
+        }
+        .histogram-bar {
+            height: 20px;
+            background: linear-gradient(to right, #4CAF50, #8BC34A);
+            border-radius: 3px;
+            color: white;
+            padding: 0 5px;
+            display: flex;
+            align-items: center;
+            transition: width 0.3s ease;
+        }
+    </style>
+`;
+document.head.insertAdjacentHTML('beforeend', styles);
+
+// Keep existing event listeners
+document.addEventListener('DOMContentLoaded', () => {
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    if (!currentUser) {
+        window.location.href = 'entrance.html';
+        return;
+    }
+    renderHistograms(currentUser);
+    renderAverageLoad(currentUser);
+});
+
+window.addEventListener('storage', (e) => {
+    if (e.key === 'currentUser') {
+        const currentUser = JSON.parse(e.newValue);
+        if (currentUser) {
+            renderHistograms(currentUser);
+            renderAverageLoad(currentUser);
+        }
+    }
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+/* стили для таблиц и кнопок */
+.table-container {
+    margin-bottom: 20px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+th, td {
+    border: 1px solid  #292e48;
+    padding: 2px;
+    text-align:  justify ;
+}
+th {
+    background-color:  #3949a0; /* Синий цвет для заголовков */
+    color: white; /* Белый цвет текста */
+}
+td {
+    word-wrap: break-word; /* Перенос текста в ячейках */
+
+}
+.update-button {
+    margin-top: 20px;
+    
+}
+
+/* правила для колонок, чтобы гарантировать применение нужной ширины */
+#tables-container {
+    width: 100%;
+    overflow-x: auto;
+}
+table {
+    width: 100%;
+    min-width: 800px;
+    table-layout: fixed;
+}
+table td:first-child,
+table th:first-child {
+    width: 30px;
+    max-width: 30px;
+    min-width: 30px;
+}
+table td:nth-child(n+3), 
+table th:nth-child(n+3) {
+    width: 50px;
+    max-width: 50px;
+    min-width: 50px;
+}
+table td:nth-child(2),
+table th:nth-child(2) {
+    width: 100px;
+    min-width: 100px;
+}
+input[type="number"] {
+    width: 100%;
+    box-sizing: border-box;
+}
+/* -------------- */

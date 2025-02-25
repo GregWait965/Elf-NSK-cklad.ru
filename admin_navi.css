@@ -1,0 +1,142 @@
+  /* Определение глобальных переменных цветов и тем: */
+        /*Основные цветовые переменные с разными оттенками основного цвета 
+        --primary: #3949a0
+    --primary-darken-1/-2/-3: различные затемнения
+    --primary-lighten-1: осветленная версия
+    --theme-color-main/-title: основные цвета темы
+}
+    */
+    :root {
+        --primary-darken-1: hsl(230.68, 47%, 41%);
+        --primary-darken-2: hsl(230.68, 47%, 38%);
+        --primary-darken-3: hsl(230.68, 47%, 33%);
+        --primary-lighten-1: hsl(230.68, 47%, 53%);
+        --primary-opacity-0: rgba(57, 73, 160, 0);
+        --theme-color-main: #999999 !important;
+        --theme-color-title: #111111 !important;
+        --primary: #3949a0 !important;
+        --theme-color-secondary: hsl(230.68, 20%, 80%);
+        --theme-color-strict-inverse: #ffffff;
+    }
+/* Базовая структура страницы: */
+    body
+/* Растягивание на всю высоту viewport */
+{
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+margin: 0;
+}
+
+main {
+flex: 1;
+}
+/* Прикрепление футера к низу */
+.bitrix-footer {
+margin-top: auto;
+background-color: #4b4848;
+text-align: center;
+padding: 20px;
+width: 100%;
+}
+
+/* Анимации: */
+
+    .animated {
+        animation-duration: 1s;
+        animation-fill-mode: both
+    }
+/* скольжение сверху */
+    @keyframes slideInDown {
+        from { transform: translate3d(0,-100%,0) }
+        to { transform: translate3d(0,0,0) }
+    }
+    .slideInDown { animation-name: slideInDown }
+
+    
+    .fadeIn { animation-name: fadeIn }
+
+/* Навигационное меню */
+/* Фиксированное позиционирование и стили навигации */
+    .nav-buttons {
+display: flex;
+justify-content: space-between;
+padding: 20px;
+position: fixed;
+bottom: 2px;
+left: 50%;
+transform: translateX(-50%);
+width: 100%;
+max-width: 800px;
+background-color: transparent;
+gap: 15px;
+z-index: 100;
+}
+/* Стили кнопок навигации */
+.nav-btn {
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 15px;
+background-color: var(--primary);
+border-radius: 8px; 
+text-decoration: none;
+color: white;
+transition: transform 0.2s;
+min-width: 60px;
+flex: 1;
+}
+.nav-btn a {
+    color: var(--theme-color-strict-inverse);
+    text-decoration: none;
+}
+.nav-btn:hover {
+transform: translateY(-5px);
+}
+
+.nav-btn svg {
+margin-bottom: 8px;
+width: 24px;
+height: 24px;
+}
+
+.nav-btn span {
+font-size: 14px;
+white-space: nowrap;
+text-align: center;
+}
+/* Адаптивный дизайн: */
+/* Адаптация под разные размеры экранов */
+@media screen and (max-width: 600px) {
+.nav-buttons {
+    padding: 10px;
+    gap: 8px;
+}
+
+.nav-btn {
+    padding: 10px;
+    min-width: 45px;
+}
+
+.nav-btn span {
+    display: none;
+}
+
+.nav-btn svg {
+    margin-bottom: 0;
+}
+}
+
+@media screen and (min-width: 601px) and (max-width: 800px) {
+.nav-buttons {
+    gap: 10px;
+}
+
+.nav-btn {
+    padding: 12px;
+}
+
+.nav-btn span {
+    font-size: 12px;
+}
+}
