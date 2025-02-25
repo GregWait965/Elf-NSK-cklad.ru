@@ -11,6 +11,13 @@ function login(event) {
     const savedStorage = localStorage.getItem('employeeDataStorage');
     console.log('Saved storage:', savedStorage);
     
+// Проверка для администратора
+if (enteredUsername === 'admin_elf_nsk' && enteredPassword === 'admin_elf_nsk') {
+    console.log('Admin access granted');
+    window.location.href = 'admin.html';
+    return; // Прекращаем выполнение функции
+}
+
     if (!savedStorage) {
         alert('База данных сотрудников не загружена');
         return;
@@ -31,12 +38,7 @@ employeeData.forEach(emp => {
 const enteredUsername = username.toLowerCase().trim();
 const enteredPassword = password.trim();
 
-// Проверка для администратора
-if (enteredUsername === 'admin_elf_nsk' && enteredPassword === 'admin_elf_nsk') {
-    console.log('Admin access granted');
-    window.location.href = 'admin.html';
-    return; // Прекращаем выполнение функции
-}
+
 
 const employee = employeeData.find(emp => 
     emp.fullName.toLowerCase().trim() === enteredUsername && 
