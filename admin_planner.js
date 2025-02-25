@@ -9,7 +9,7 @@ const employeeList = document.getElementById('employeeList');
 console.log('Данные после импорта CSV:', employeeDataStorage);
 console.log('Структура первого сотрудника:', employees[0]);
 console.log('Количество сотрудников:', employees.length);
-// Добавление сотрудников в список используя fullName
+
 // Добавление сотрудников в список используя fullName
 employees.forEach(emp => {
     const checkbox = document.createElement('div');

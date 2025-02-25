@@ -5,7 +5,7 @@ function login(event) {
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
     
-    // Debug logging
+    // Ведение журнала отладки
     console.log('Login attempt:', {username, password});
     
     const savedStorage = localStorage.getItem('employeeDataStorage');

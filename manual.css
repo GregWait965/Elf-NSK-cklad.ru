@@ -1,0 +1,28 @@
+/* <!-- стили для блока с инструкциями,(видео,фото, пдф, док.) -->*/
+        p { text-indent: 30px; }
+        b { text-decoration-color:#2f0996;}
+        .instruction-content {
+            padding: 10px;
+            border: 1px solid  #2f0996;
+            border-radius: 4px;
+        }
+        
+        .attachments-section {
+            margin-top: 10px;
+            padding: 3px;
+            background: #d6dffa;
+        }
+        
+        .image-preview, .video-preview, .doc-preview {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 5px 0;
+            
+        }
+        
+        .file-input-image, .file-input-video, .file-input-doc {
+            margin: 5px 0;
+            color: rgb(26, 9, 126);
+        }
+        

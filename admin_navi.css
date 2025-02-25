@@ -4,7 +4,7 @@
     --primary-darken-1/-2/-3: различные затемнения
     --primary-lighten-1: осветленная версия
     --theme-color-main/-title: основные цвета темы
-}
+
     */
     :root {
         --primary-darken-1: hsl(230.68, 47%, 41%);

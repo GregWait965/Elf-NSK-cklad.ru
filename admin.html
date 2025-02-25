@@ -43,7 +43,7 @@
 
 <main>
     <br>
-    <button type="submit" class="nav-btn"><a href="entrance.html">Вход в Л.К.</a></button>
+    <button type="submit" class="nav-btn"><a href="index.html">Вход в Л.К.</a></button>
 <!-- Блок  страницы СООБЩЕНИЯ -->
 <div class="message-form">
         <h3>Добавить новое сообщение</h3>
@@ -110,7 +110,7 @@
 <!-- Добавляем навигационные кнопки -->
 <div class="nav-buttons container">
     
-    <a href="index.html" class="nav-btn">
+    <a href="entrance.html" class="nav-btn">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z" stroke="white" stroke-width="2"/>
         </svg>
@@ -146,149 +146,7 @@
 <script src="admin_planner.js"></script>
 <script src="admin_bell.js"></script>
 <script src="scroll.js"></script>
-<script>
-    // Remove the existing employee array and dummy data generation
-// Replace with direct CSV import handling
-function saveAndMaintainEmployeeData(newData) {
-    // Get timestamp of update
-    const updateTimestamp = new Date().getTime();
-    
-    // Create data storage object
-    const dataStorage = {
-        timestamp: updateTimestamp,
-        employeeData: newData,
-        lastUpdate: new Date().toLocaleString()
-    };
-    
-    // Save to localStorage
-    localStorage.setItem('employeeDataStorage', JSON.stringify(dataStorage));
-}
-
-function handleCSVImport() {
-    const fileInput = document.createElement('input');
-    fileInput.type = 'file';
-    fileInput.accept = '.csv';
-    
-    fileInput.addEventListener('change', (e) => {
-        const file = e.target.files[0];
-        const reader = new FileReader();
-        
-        reader.onload = function(event) {
-            const csvData = event.target.result;
-            const decoder = new TextDecoder('windows-1251');
-            const decodedData = decoder.decode(new Uint8Array(event.target.result));
-            
-            const rows = decodedData.split(/\r?\n/);
-            const employeeData = parseEmployeeData(rows);
-            
-            // Save data with timestamp
-            saveAndMaintainEmployeeData(employeeData);
-            renderEmployeeTable(rows);
-        };
-        
-        reader.readAsArrayBuffer(file);
-    });
-    
-    fileInput.click();
-}
-
-
-// Add this function to load saved table data
-function loadSavedTableData() {
-    const savedStorage = localStorage.getItem('employeeDataStorage');
-    if (savedStorage) {
-        const { employeeData } = JSON.parse(savedStorage);
-        if (employeeData && employeeData.length > 0) {
-            const container = document.getElementById('tables-container');
-            container.innerHTML = '';
-            const table = document.createElement('table');
-            
-            let tableHTML = `
-                <thead>
-                    <tr>
-                        <th>№</th>
-                        <th>Фамилия, имя, отчество</th>
-                        <th>Отраб. часов</th>
-                        <th>Отраб. смен</th>
-                        <th>Собрано строк</th>
-                        <th>% участия в сборке</th>
-                        <th>Табельный номер</th>
-                        <th>% участия в погрузке</th>
-                        <th>% Сред/смен. загруж.</th>
-                        <th>Допущено ошибок</th>
-                        <th>% допущ. ошибок</th>
-                    </tr>
-                </thead>
-                <tbody>
-            `;
-
-            employeeData.forEach((employee, index) => {
-                tableHTML += `
-                    <tr>
-                        <td>${employee.namb}</td>
-                        <td>${employee.fullName}</td>
-                        <td>${employee.hoursWorked}</td>
-                        <td>${employee.shiftsWorked}</td>
-                        <td>${employee.rowsCollected || '-'}</td>
-                        <td>${employee.assemblyParticipation}</td>
-                        <td>${employee.personnelNumber}</td>
-                        <td>${employee.loadingParticipation}</td>
-                        <td>${employee.averageShiftLoad}</td>
-                        <td>${employee.errorsMade}</td>
-                        <td>${employee.errorRate}</td>
-                    </tr>
-                `;
-            });
-
-            tableHTML += '</tbody>';
-            table.innerHTML = tableHTML;
-            container.appendChild(table);
-        }
-    }
-}
-
-// Add event listener to load table data when page loads
-document.addEventListener('DOMContentLoaded', loadSavedTableData);
-
-// Load saved imported data on page load
-document.addEventListener('DOMContentLoaded', () => {
-    const savedData = localStorage.getItem('importedEmployeeData');
-    if (savedData) {
-        const rows = JSON.parse(savedData);
-        renderEmployeeTable(rows);
-    }
-});
-
-
-
-function parseEmployeeData(rows) {
-    const data = [];
-    // Skip header row
-    for(let i = 1; i < rows.length; i++) {
-        if(!rows[i].trim()) continue;
-        
-        const columns = rows[i].split(';');
-        data.push({
-            namb: columns[0].trim(),
-            fullName: columns[1].trim(),
-            personnelNumber: columns[6].trim(),
-            hoursWorked: columns[2].trim(),
-            shiftsWorked: columns[3].trim(),
-            assemblyParticipation: columns[5].trim(),
-            loadingParticipation: columns[7].trim(),
-            averageShiftLoad: columns[8].trim(),
-            errorsMade: columns[9].trim(),
-            errorRate: columns[10].trim(),
-            rowsCollected: columns[4].trim()  // Added the 11th column
-        });
-    }
-    return data;
-}
-
-
-// Update button event listener
-document.querySelector('.update-btn').addEventListener('click', handleCSVImport);
-</script>
+<!-- <script src="auth_check.js"></script> -->
 
 <!-- блок стрелки скроллинга -->
 <div class="scroll-to-top">

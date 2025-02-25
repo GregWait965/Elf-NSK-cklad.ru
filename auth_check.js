@@ -1,17 +1,17 @@
-// Get current page path
+// Получить путь к текущей странице
 const currentPage = window.location.pathname.split('/').pop();
 
-// Pages that don't require authentication
-const publicPages = ['entranse.html', 'entranse.php'];
+// Страницы, для которых не требуется аутентификация
+const publicPages = ['index.html', 'index.php'];
 
-// Check if user is authenticated
+// Проверьте, прошел ли пользователь проверку подлинности
 function checkAuth() {
     const currentUser = localStorage.getItem('currentUser');
     
     if (!currentUser && !publicPages.includes(currentPage)) {
-        window.location.href = 'entranse.html';
+        window.location.href = 'index.html';
     }
 }
 
-// Run check immediately
+// немедленно снимите проверку
 checkAuth();

@@ -4,97 +4,90 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
-    <title>ПЛАНЕРКА</title>
+    <title>вход в л.к.</title>
     
-    
-
-    <link href="index.css" type="text/css" rel="stylesheet">
-    <link href="bell.css" type="text/css" rel="stylesheet">
-    <link href="navi.css" type="text/css" rel="stylesheet">
-    <link href="bootstrap.min.css" type="text/css" rel="stylesheet">
-    <link href="theme.min.css" type="text/css" rel="stylesheet">
-    <link href="logo.ico"  type="image/x-icon" rel="icon" >
+        <link rel="stylesheet" href="bootstrap.min.css" type="text/css" >
+        <link rel="stylesheet" href="theme.min.css" type="text/css" >
+        <link rel="icon" href="logo.ico" type="image/x-icon"   >
+        <link rel="stylesheet" href="bell.css" type="text/css" >
+        <link rel="stylesheet" href="navi.css" type="text/css" >
+        
+        
 </head>
 <body>
-    <!-- создание шапки (header) страницы-->
+<!-- создание шапки (header) страницы  -->
 <header>
-<div id="b596" class="block-wrapper block-04-4-one-col-big-with-img">
+  <div id="b596" class="block-wrapper block-04-4-one-col-big-with-img">
     <section class="landing-block js-animation landing-block-node-mainimg u-bg-overlay g-pt-30 g-pb-30 slideInDown animated" style="background-color: var(--primary);">
         <div class="u-bg-overlay__inner">
             <div class="landing-block-node-inner container g-max-width-container text-uppercase text-center">
-                <h2 class="landing-block-node-title js-animation fadeIn animated g-line-height-1_1 g-font-weight-700 h1 g-color-white">ПЛАНЕРКА</h2>
+                <h2 class="landing-block-node-title js-animation fadeIn animated g-line-height-1_1 g-font-weight-700 h1 g-color-white">ООО "ГК ЭЛЬФ"</h2>
             </div>
         </div>
     </section>
 </div>
 </header>
 
-<main>
+<main class="w-100 landing-public-mode">
+        <!--дбавление иконки колокольчика -->
+    <div class="notification-bell">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="white">
+            <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z"/>
+        </svg>
+    </div>   
+    <!-- основная часть страницы --> 
+        <div id="b618" class="block-wrapper block-52-4-mini-text-titile-with-btn-left">
+            <section class="landing-block g-pt-30 g-pb-30 g-pl-auto g-rounded-3 u-block-border-none">
+                <div class="container">
+                    <div class="landing-block-node-container row g-flex-centered align-items-center">
+                        <div class="landing-block-node-button-container col-6 js-animation slideInLeft animated d-flex justify-content-start align-items-center">
+                            <form id="loginForm" class="d-flex align-items-center">
+                                <div class="d-flex flex-column g-mr-15">
 
-<!-- добавление иконки колоколчика -->
-    
-<div class="notification-bell">
-    <svg viewBox="0 0 24 24" width="24" height="24" fill="white">
-        <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z"/>
-    </svg>
-    
-</div>
-<!-- вывод задач -->
-<div class="published-tasks">
-	<h2>Опубликованные задачи</h2>
-	<div id="publishedTaskBlocks"></div>
-</div>
-<br>
-<br>
-<br>
-<br>
+                                    <input type="text" id="username" placeholder="Фамилия" minlength="6" class="form-control g-mb-10 g-rounded-3" style="width: 133px;" >
+                                    <input type="password" id="password" placeholder="табельный номер" minlength="6" class="form-control g-rounded-3" style="width: 133px;" >
+                                
+                                </div>
+                                <button type="submit" class="landing-block-node-button-6578 btn text-uppercase g-btn-primary g-ml-10 g-rounded-4 g-color--hover g-btn-type-solid g-btn-size-md g-btn-px-m" style="width: 150px; font-size: 14px;">Войти в личный кабинет</button>
+                            </form>
+                        </div>
+                        <div class="landing-block-node-text-container text-right col-6 js-animation slideInRight animated">
+                            <h6 class="landing-block-node-title g-mb-0"></h6>
+                            <div class="landing-block-node-text text-justify g-font-size-17"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
 
-
-	<!-- Добавляем навигационные кнопки -->
-	<div class="nav-buttons container">
-		<a href="index.html" class="nav-btn">
-			<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z" stroke="white" stroke-width="2"/>
-			</svg>
-			<span>ПЛАНЕРКА</span>
-		</a>
-		
-		<a href="messages.html" class="nav-btn">
-			<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10z" stroke="white" stroke-width="2"/>
-			</svg>
-			<span>СООБЩЕНИЯ</span>
-		</a>
-		
-		<a href="info.html" class="nav-btn">
-			<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<circle cx="12" cy="12" r="10" stroke="white" stroke-width="2"/>
-				<path d="M12 8v8M12 7v.01" stroke="white" stroke-width="2"/>
-			</svg>
-			<span>ПОКАЗАТЕЛИ РАБОТЫ</span>
-		</a>
-		
-		<a href="knowledge_base.html" class="nav-btn">
-			<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="white" stroke-width="2"/>
-			</svg>
-			<span>БАЗА ЗНАНИЙ</span>
-		</a>
-	</div>
-	</main>
-
+        <div id="b616" class="block-wrapper block-27-one-col-fix-title-and-text-2">
+            <section class="landing-block js-animation g-pt-30 g-pb-30">
+                <div class="landing-block-node-text-container container g-max-width-container">
+                    <h2 class="landing-block-node-title js-animation fadeIn animated g-mb-20">Добро пожаловать в нашу команду!</h2>
+                    <div class="landing-block-node-text js-animation g-mb-20 g-pb-1">
+                        ООО "Группа Компаний Эльф" — это федеральная холдинговая компания, специализирующаяся на производстве и продажах сантехнического, отопительного и промышленного оборудования.<br><br>
+                        Компания начала свою деятельность в Туле в 1995 году, головной офис ГК Эльф и по сей день находится в городе оружейников. В 11 городах России Группа Компаний представлена подразделениями —<br>
+                        в Санкт-Петербурге, Ярославле, Самаре, Волгограде, Краснодаре, Нижнем Новгороде, Омске, Екатеринбурге, Новосибирске и Красноярске.<br>
+                        Мы видим свою миссию в надёжном обеспечении наших клиентов и партнёров представляемой нами продукцией.
+                    </div>
+                </div>
+            </section>
+        </div>
+</main>
 <hr>
 <footer class="bitrix-footer" style="background-color: #4b4848; text-align: center; padding: 5px;">
     <span class="bitrix-footer-text">
         <div class="bitrix-footer-seo">© 2025 ООО "ГК Эльф" ОП г. Новосибирск</div>
     </span>
 </footer>
-  
-    <script src="index_planner.js"></script>
-    <script src="bell.js"></script>
-<!-- 	<script src="auth_check.js"></script> -->
 
+<script src="entranse.js"></script>
+<script src="bell.js"></script>
+<script>// Prevent unauthorized access to info.html
+    
+    
 
-
+    </script>
+    
 </body>
 </html>
