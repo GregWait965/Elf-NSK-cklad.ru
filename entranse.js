@@ -4,20 +4,22 @@ function login(event) {
     
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
+    const enteredUsername = username.toLowerCase().trim();
+    const enteredPassword = password.trim();
     
+    // Проверка для администратора
+    if (enteredUsername === 'admin_elf_nsk' && enteredPassword === 'admin_elf_nsk') {
+        console.log('Admin access granted');
+        window.location.href = 'admin.html';
+        return; 
+        // Прекращаем выполнение функции
+    } 
     // Ведение журнала отладки
     console.log('Login attempt:', {username, password});
     
     const savedStorage = localStorage.getItem('employeeDataStorage');
     console.log('Saved storage:', savedStorage);
     
-// Проверка для администратора
-if (enteredUsername === 'admin_elf_nsk' && enteredPassword === 'admin_elf_nsk') {
-    console.log('Admin access granted');
-    window.location.href = 'admin.html';
-    return; // Прекращаем выполнение функции
-}
-
     if (!savedStorage) {
         alert('База данных сотрудников не загружена');
         return;
@@ -34,9 +36,6 @@ employeeData.forEach(emp => {
         storedNumber: emp.personnelNumber
     });
 });
-
-const enteredUsername = username.toLowerCase().trim();
-const enteredPassword = password.trim();
 
 
 
